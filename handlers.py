@@ -13,12 +13,12 @@ logger = logging.getLogger(__name__)
 trello_manager = None
 
 
+# настройка обработчиков для диспетчера
 def setup_handlers(dp, manager):
-    """Настройка обработчиков для диспетчера"""
     global trello_manager
     trello_manager = manager
 
-    # Регистрируем обработчики команд
+    # регистрация обработчиков команд
     dp.message.register(cmd_start, Command("start"))
     dp.message.register(cmd_help, Command("help"))
     dp.message.register(cmd_fields, Command("fields"))
@@ -26,8 +26,6 @@ def setup_handlers(dp, manager):
 
     return dp
 
-
-# ... импорты и остальной код ...
 
 # обработка команды start ---------------------------------
 async def cmd_start(message: Message):

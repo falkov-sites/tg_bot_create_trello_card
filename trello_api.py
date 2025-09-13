@@ -69,8 +69,8 @@ class TrelloManager:
                 f"Ошибка соединения при получении кастомных полей: {e}")
             return {}
 
+    # Парсинг даты - используем только дату без времени в формате YYYY-MM-DD
     def parse_date_string(self, date_string: str) -> Optional[str]:
-        """Парсинг даты - используем только дату без времени в формате YYYY-MM-DD"""
         try:
             # берем только часть до пробела (игнорируем время)
             date_part = date_string.split()[0].strip()
