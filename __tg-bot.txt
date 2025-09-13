@@ -8,10 +8,10 @@ shift/cmd/P  Peacock  EnterColor  #048100ff  (back зеленый)
 🟡 ВИРТУАЛЬНОЕ ОКРУЖЕНИЕ: проверить активацию venv
 
 активировать venv:
-    - в начале подсказки терминала должно появиться (.venv)
-    - vscode: внизу справа выбрать .venv
+   - в начале подсказки терминала должно появиться (.venv)
+   - vscode: внизу справа выбрать .venv
 
-установка и активация venv:
+# установка и активация venv:
 python3 -m venv .venv
 source .venv/bin/activate
 -------------------------------------------------------------------------------
@@ -19,9 +19,12 @@ source .venv/bin/activate
 pip list
 
 pip install aiogram python-dotenv
+pip install requests
 pip install aiogram sqlalchemy python-dotenv aiosqlite asyncmy redis geopy greenlet 
-
 pip install pandas openpyxl   # для Excel
+
+python bot.py   ctrl/C
+pip freeze > req.txt
 -------------------------------------------------------------------------------
 🟡 GIT:
 git init
@@ -35,10 +38,6 @@ git config --list
 сначала создать пустой репо на github -repo_name-
 git remote add origin https://github.com/falkov-sites/-repo_name-.git
 git push -u origin main
--------------------------------------------------------------------------------
-в терминале:  python bot.py   ctrl/C
-
-pip freeze > req.txt    # список установленных пакетов
 -------------------------------------------------------------------------------
 fastapi    - для создания endpoint
 pydantic   - для валидации данных запросов
